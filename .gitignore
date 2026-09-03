@@ -1,0 +1,13 @@
+# Private environment variables
+.env
+
+# Local database file
+finshield
+
+# Python caches & virtual environments
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# Node dependencies (if applicable)
+node_modules/
