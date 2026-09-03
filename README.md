@@ -1,287 +1,142 @@
-# UNSTOP-FINTECH
-# FinShield Specifications
+# FinShield — Intelligent Banking Financial-Resilience Platform
 
 ## Overview
 
-This directory contains all technical specifications for the FinShield platform. Each document provides detailed requirements, design decisions, and implementation guidance.
-
----
-
-## Specification Documents
-
-### ✅ Completed
-
-1. **[requirements.md](./requirements.md)**  
-   Complete functional and non-functional requirements including all FR and NFR specifications
-
-2. **[architecture.md](./architecture.md)**  
-   High-level system architecture, technology stack justification, and design principles
-
-3. **[database-schema.md](./database-schema.md)**  
-   Complete PostgreSQL schema with all tables, indexes, constraints, triggers, and RLS policies
-
-4. **[project-structure.md](./project-structure.md)**  
-   Complete directory layout for frontend, backend, and database
-
-5. **[implementation-plan.md](./implementation-plan.md)**  
-   Detailed 48-72 hour hackathon implementation plan with phases, tasks, and timelines
-
-### 📝 To Be Created
-
-The following specifications need to be created to complete the documentation:
-
-6. **system-design.md**  
-   Detailed system design including data flow, sequence diagrams, and component interactions
-
-7. **api-specification.md**  
-   Complete REST API documentation with all endpoints, request/response schemas, and examples
-
-8. **frontend-specification.md**  
-   UI/UX requirements, component specifications, page layouts, and user journeys
-
-9. **backend-specification.md**  
-   Backend service architecture, module specifications, and integration patterns
-
-10. **financial-engine-spec.md**  
-    Financial calculation formulas, EMI computation, ratios, and validation rules
-
-11. **risk-engine-spec.md**  
-    Risk scoring algorithm, factor calculations, weights, and explainability logic
-
-12. **forecast-engine-spec.md**  
-    Cash-flow forecasting algorithm, pattern detection, and projection methodology
-
-13. **intervention-engine-spec.md**  
-    Intervention hierarchy, decision rules, recommendation logic, and triggering conditions
-
-14. **overdraft-engine-spec.md**  
-    Overdraft eligibility criteria, cost calculations, and impact assessment
-
-15. **loan-engine-spec.md**  
-    Loan comparison algorithm, eligibility checks, and EMI calculations
-
-16. **recommendation-engine-spec.md**  
-    Multi-criteria scoring, best-fit algorithm, and explainability framework
-
-17. **ai-service-spec.md**  
-    LLM integration patterns, prompt templates, fallback strategies, and explanation generation
-
-18. **authentication-security-spec.md**  
-    Authentication flows, authorization models, RLS policies, and security controls
-
-19. **testing-strategy.md**  
-    Test plans, test cases, coverage requirements, and testing tools
-
-20. **synthetic-data-spec.md**  
-    Synthetic data generation rules, customer profiles, transaction patterns, and seed data
-
-21. **deployment-spec.md**  
-    Deployment architecture, CI/CD pipelines, environment configuration, and monitoring
-
----
-
-## Document Status
-
-| Status | Count | Percentage |
-|--------|-------|------------|
-| ✅ Complete | 5 | 24% |
-| 📝 Pending | 16 | 76% |
-| **Total** | **21** | **100%** |
-
----
-
-## How to Use These Specifications
-
-### For Developers
-
-1. **Start with:** `requirements.md` and `architecture.md` to understand the system
-2. **Reference:** `database-schema.md` for data models
-3. **Follow:** `implementation-plan.md` for development sequence
-4. **Consult:** Engine-specific specs when implementing each module
-5. **Use:** `api-specification.md` for frontend-backend integration
-
-### For Product/Business
-
-1. **Start with:** `requirements.md` for feature understanding
-2. **Review:** `frontend-specification.md` for UI/UX details
-3. **Understand:** Engine specs for business logic
-4. **Reference:** `implementation-plan.md` for timeline
-
-### For QA/Testing
-
-1. **Start with:** `requirements.md` for acceptance criteria
-2. **Use:** `testing-strategy.md` for test planning
-3. **Reference:** Each engine spec for test cases
-4. **Follow:** `api-specification.md` for integration testing
-
----
-
-## Specification Template Structure
-
-Each specification document follows this structure:
-
-```markdown
-# FinShield — [Module] Specification
-
-## 1. Document Overview
-Version, date, status
-
-## 2. Objectives
-What this module achieves
-
-## 3. Functional Requirements
-Detailed requirements with IDs
-
-## 4. Non-Functional Requirements
-Performance, security, scalability
-
-## 5. Design
-Architecture and algorithms
-
-## 6. Data Models
-Inputs, outputs, schemas
-
-## 7. Business Rules
-Configurable rules and logic
-
-## 8. Validation Rules
-Input validation and constraints
-
-## 9. Error Handling
-Error scenarios and responses
-
-## 10. Dependencies
-External and internal dependencies
-
-## 11. Implementation Tasks
-Development checklist
-
-## 12. Acceptance Criteria
-Definition of done
-
-## Document Control
-Version, update date, review schedule
-```
-
----
-
-## Quick Navigation
-
-### By Role
-
-**Backend Developers:**
-- architecture.md
-- backend-specification.md
-- database-schema.md
-- All engine specifications
-- api-specification.md
-
-**Frontend Developers:**
-- architecture.md
-- frontend-specification.md
-- api-specification.md
-- authentication-security-spec.md
-
-**Full-Stack Developers:**
-- Start with requirements.md
-- Follow implementation-plan.md
-- Reference all specs as needed
-
-**DevOps Engineers:**
-- architecture.md
-- deployment-spec.md
-- authentication-security-spec.md
-
-**Data Scientists/ML Engineers:**
-- risk-engine-spec.md (ML component)
-- synthetic-data-spec.md
-- forecast-engine-spec.md
-
----
-
-## Specification Principles
-
-All specifications in this directory follow these principles:
-
-1. **Completeness** — All information needed for implementation
-2. **Clarity** — Clear, unambiguous language
-3. **Consistency** — Aligned across all documents
-4. **Traceability** — Requirements linked to implementation
-5. **Testability** — Clear acceptance criteria
-6. **Maintainability** — Version controlled and reviewed
-
----
-
-## Document Dependencies
+FinShield is a proactive financial health monitoring and intervention platform that helps banks identify customers at financial risk and recommend responsible, personalized solutions before they reach a crisis.
+
+**Core Philosophy:** Responsible intervention before crisis, not just loan pushing.
+
+## Key Features
+
+- **Financial Resilience Score** — Explainable 0-100 score tracking customer financial health
+- **Cash-Flow Forecasting** — Predictive analysis of upcoming liquidity gaps
+- **Financial Distress Prediction** — ML-powered early warning system
+- **Intervention Engine** — Tiered recommendation system prioritizing non-credit solutions
+- **Overdraft Intelligence** — Smart short-term liquidity gap bridging
+- **Loan Comparison** — Multi-lender best-fit analysis, not just lowest rate
+- **What-If Simulator** — Interactive EMI and impact modeling
+- **AI Explanation Layer** — Natural language financial insights
+
+## Technology Stack
+
+### Frontnd
+- **Next.js 14** — App router and server components
+- **React 18** — Interactive UI
+- **TypeScript** — Type-safe financial models
+- **Tailwind CSS** — Responsive styling
+- **shadcn/ui** — Banking-grade components
+- **Recharts** — Financial visualizations
+- **Lucide React** — Icons
+
+### Backend
+- **Python 3.11+**
+- **FastAPI** — REST API framework
+- **Pandas** — Financial data analysis
+- **NumPy** — Numerical calculations
+- **scikit-learn** — Distress prediction ML
+- **Pydantic** — Data validation
+
+### Database & Auth
+- **PostgreSQL 15+** — Relational database
+- **Supabase** — Managed PostgreSQL + Auth
+- **Row-Level Security** — Data isolation
+
+### Deployment
+- **Vercel** — Frontend hosting
+- **Render/Railway** — Backend hosting
+- **GitHub** — Version control
+
+## Project Structure
 
 ```
-requirements.md (foundation)
-       ↓
-architecture.md
-       ↓
-    ┌──┴──┬──────────┬────────────┐
-    ↓     ↓          ↓            ↓
-database  backend  frontend   deployment
--schema   -spec    -spec      -spec
-    ↓
- ┌──┴──┬──────┬──────┬────────┬──────┬──────┬────────┐
- ↓     ↓      ↓      ↓        ↓      ↓      ↓        ↓
-financial risk forecast intervention overdraft loan ai-service
--engine   -engine -engine   -engine     -engine -engine
-    ↓
- ┌──┴────────────┬────────────────┐
- ↓               ↓                ↓
-api-spec    testing-strategy   synthetic-data
+finshield/
+├── docs/
+│   ├── specs/              # All specification documents
+│   ├── architecture/       # Architecture diagrams
+│   └── api/               # API documentation
+├── frontend/              # Next.js application
+├── backend/               # FastAPI application
+│   ├── services/
+│   │   ├── financial_engine/
+│   │   ├── risk_engine/
+│   │   ├── forecast_engine/
+│   │   ├── intervention_engine/
+│   │   ├── overdraft_engine/
+│   │   ├── loan_engine/
+│   │   ├── recommendation_engine/
+│   │   └── ai_service/
+│   ├── models/
+│   ├── api/
+│   └── tests/
+├── database/
+│   ├── migrations/
+│   └── seed/
+└── tests/
+    ├── e2e/
+    └── integration/
 ```
 
----
+## Getting Started
 
-## Versioning
+### Prerequisites
+- Node.js 18+
+- Python 3.11+
+- PostgreSQL 15+ (or Supabase account)
+- Git
 
-- **Major version (X.0):** Significant architectural changes
-- **Minor version (X.Y):** Feature additions or modifications
-- **Patch version (X.Y.Z):** Bug fixes and clarifications
+### Environment Setup
 
-Current Version: **1.0** (Initial hackathon version)
+1. Clone the repository
+2. Copy `.env.example` to `.env` and configure
+3. Install dependencies (see respective README files in frontend/ and backend/)
+4. Run database migrations
+5. Seed synthetic data
+6. Start development servers
 
----
+## Documentation
+
+All specifications are located in the `docs/specs/` directory:
+
+- `requirements.md` — Functional and non-functional requirements
+- `architecture.md` — System architecture overview
+- `system-design.md` — Detailed system design
+- `database-schema.md` — Complete database schema
+- `api-specification.md` — REST API contracts
+- `frontend-specification.md` — UI/UX requirements
+- `backend-specification.md` — Backend service design
+- `financial-engine-spec.md` — Financial calculation rules
+- `risk-engine-spec.md` — Risk scoring logic
+- `forecast-engine-spec.md` — Cash-flow prediction
+- `intervention-engine-spec.md` — Intervention decision tree
+- `overdraft-engine-spec.md` — Short-term credit logic
+- `loan-engine-spec.md` — Loan comparison algorithm
+- `recommendation-engine-spec.md` — Best-fit scoring
+- `ai-service-spec.md` — LLM integration patterns
+- `authentication-security-spec.md` — Security architecture
+- `testing-strategy.md` — Testing approach
+- `synthetic-data-spec.md` — Test data generation
+- `deployment-spec.md` — Deployment architecture
+- `implementation-plan.md` — Development roadmap
+
+## Core Principles
+
+1. **Financial Correctness** — All calculations must be deterministic and accurate
+2. **Explainability** — Every score, prediction, and recommendation must be explainable
+3. **Responsible Lending** — Avoid unnecessary borrowing; prioritize alternatives
+4. **Best-Fit Over Cheapest** — Recommend suitable loans, not just lowest rates
+5. **Transparency** — Show consequences before decisions
+6. **Security First** — Customer data protection by design
+7. **Synthetic Data** — No real customer data in MVP
+8. **Modular Monolith** — Simple architecture for fast iteration
 
 ## Contributing
 
-When updating specifications:
+This is a hackathon prototype. See `docs/specs/implementation-plan.md` for development phases.
 
-1. Update the version number
-2. Update "Last Updated" date
-3. Add summary in "Next Review" section
-4. Ensure consistency with related specs
-5. Update this README if adding new specs
+## License
 
----
+[Add appropriate license]
 
-## Glossary
+## Contact
 
-**DTI:** Debt-to-Income ratio  
-**EMI:** Equated Monthly Installment  
-**LLM:** Large Language Model  
-**ML:** Machine Learning  
-**MVP:** Minimum Viable Product  
-**RLS:** Row-Level Security  
-**API:** Application Programming Interface  
-**CRUD:** Create, Read, Update, Delete  
-
----
-
-## Contact & Questions
-
-For questions about specifications:
-1. Check the relevant spec document first
-2. Review related specs for context
-3. Consult the implementation-plan.md for practical guidance
-4. Reach out to technical lead
-
----
-
-**Document Control:**
-- Version: 1.0
-- Last Updated: September 3, 2026
-- Next Review: After specification completion
+[Add contact information]
